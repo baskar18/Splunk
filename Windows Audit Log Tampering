@@ -1,0 +1,5 @@
+index=__your_sysmon_index__ (sourcetype=wineventlog AND (EventCode=1102 OR EventCode=1100)) OR
+
+(sourcetype=wineventlog AND EventCode=104)
+
+| stats count by _time EventCode Message sourcetype host
