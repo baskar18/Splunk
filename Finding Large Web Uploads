@@ -1,0 +1,5 @@
+index=<your index > sourcetype=<your source type >
+
+| where bytes_out > 35000000
+
+| table _time src_ip bytes* uri
