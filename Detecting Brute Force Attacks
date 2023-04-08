@@ -1,0 +1,12 @@
+Window's:
+
+index=windows  sourcetype="WinEventLog:Security" EventCode=4625 
+| stats count by src_ip 
+| where count > 100
+
+Ubuntu:
+
+index=linux sourcetype="syslog" ("Failed password" OR "authentication failure") 
+| stats count by src_ip 
+| where count > 100
+
